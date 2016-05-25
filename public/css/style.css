@@ -2,6 +2,10 @@ h1 {
 	background-color: blue; 
 }
 
+table.workoutDB {
+	border-collapse: collapse;
+}
+
 th,tr,td {
 	border: thin solid black;
 }
