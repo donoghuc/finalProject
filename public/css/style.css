@@ -1,3 +1,7 @@
 h1 {
 	background-color: blue; 
 }
+
+table.workoutDB {
+	border: thin solid black;
+}
