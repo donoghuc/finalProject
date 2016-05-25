@@ -1,5 +1,27 @@
-<h2>test</h2>
-<h1>MySQL Results:</h1>
+<h1>Workout Information</h1>
+<h2>Enter A New Workout</h2>
+<form id="addNew" action="/insert">
+	<fieldset>
+		<legend>New Workout Entry</legend>
+		<label for="name">Exercise Name: </label>
+		<input type="text" name="name" id="name">
+
+		<label for="reps">Repititions: </label>
+		<input type="text" name="reps" id="reps">
+
+		<label for="weight">Total Weight: </label>
+		<input type="text" name="weight" id="weight">
+
+		<label for="date">Date Perfomred: </label>
+		<input type="text" name="date" id="date">
+
+		<label for="lbs">Weight Unit: </label>
+		<input type="radio" name="lbs" id="lbs">
+
+		<input type="submit" id="submit" value="Upload Workout">
+	</fieldset>
+</form>
+
 <p>{{results}}</p>
 
 <script src="/js/script.js"></script>
