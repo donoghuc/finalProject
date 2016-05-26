@@ -4,9 +4,22 @@ function work() {
     document.getElementById('submit').addEventListener('click', function(event) {
         
         var formData = document.getElementById('addNew');
-        var url = "/insert/?name=" + formData.elements.name.value + "&reps=" + formData.elements.reps.value + "&weight=" + formData.elements.weight.value + "&lbs=" + formData.elements.lbs.value + "&date=" + formData.elements.date.value;
-        console.log(url);
-        document.getElementById('DOMtest').textContent = url;
+        var url = "/insert/?name=" + formData.elements.name.value +
+                  "&reps=" + formData.elements.reps.value + 
+                  "&weight=" + formData.elements.weight.value + 
+                  "&lbs=" + formData.elements.lbs.value + 
+                  "&date=" + formData.elements.date.value;
+        
+
+        var req = new XMLHttpRequest();
+        req.open('GET', url, true);
+        req.addEventListener('load',function(){
+            if(req.status >= 200 && req.status < 400) {
+                var response = JSON.parse(req.responseText);
+                document.getElementById('DOMtest').textContent = response;
+            }
+        });
+        req.send(null); 
         event.preventDefault();
     });
 
