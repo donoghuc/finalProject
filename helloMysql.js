@@ -46,9 +46,11 @@ app.get('/insert',function(req,res,next){
     newID = result.insertId; 
     console.log("new id:")
     console.log(newID);
-    console.log("result:")
-    console.log(result.insertID);
-    mysql.ppol.query("SELECT * FROM workouts WHERE id=?", newID, function(err,result){
+
+  });
+    console.log("new id:")
+    console.log(newID);
+  mysql.ppol.query("SELECT * FROM workouts WHERE id=?", newID, function(err,result){
     if(err){
       next(err);
       return;
@@ -60,7 +62,7 @@ app.get('/insert',function(req,res,next){
     //res.send(context);
     //context.results = "Inserted id " + result.insertId;
     //res.render('home',context);
-  });
+
 
 
 
