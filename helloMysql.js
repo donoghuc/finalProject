@@ -25,11 +25,12 @@ app.get('/',function(req,res,next){
                           'reps': rows[i].reps,
                           'weight': rows[i].weight,
                           'date': rows[i].lbs,
-                          'lbs': rows[i].date})    
+                          'lbs': rows[i].date});   
     }
 
     context.workoutDBdata = workoutDBdata;
     res.render('home', context);
+    
   });
 });
 
