@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded',work)
 
 function work() {
     document.getElementById('submit').addEventListener('click', function(event) {
-        document.getElementById('DOMtest').textContent='you clciked';
+        
+        var value = document.getElementById('name');
+        document.getElementById('DOMtest').textContent=value;
         event.preventDefault();
     });
 
