@@ -41,7 +41,7 @@
 	<tbody>
 	{{#each workoutDBdata}}
 		<tr>
-			<td>{{this.id}}</td>
+			<td style="display:none">{{this.id}}</td>
 			<td>{{this.name}}</td>
 			<td>{{this.reps}}</td>
 			<td>{{this.weight}}</td>
@@ -51,6 +51,7 @@
 	{{/each}}
 	</tbody>
 </table>
-<p>{{results}}</p>
+
+
 
 <script src="/js/script.js"></script>
