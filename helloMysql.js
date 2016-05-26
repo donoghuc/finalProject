@@ -43,7 +43,15 @@ app.get('/insert',function(req,res,next){
       return;
     }
 
-      mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+
+    /*
+    context.newID = result.insertId;
+    res.send(context);*/
+    //context.results = "Inserted id " + result.insertId;
+    //res.render('home',context);
+  });
+
+    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
       return;
@@ -62,13 +70,9 @@ app.get('/insert',function(req,res,next){
 
     context.workoutDBdata = workoutDBdata;
     res.render('home', context);
-    });
-    /*
-    context.newID = result.insertId;
-    res.send(context);*/
-    //context.results = "Inserted id " + result.insertId;
-    //res.render('home',context);
+    
   });
+
 });
 /*
 app.get('/delete',function(req,res,next){
