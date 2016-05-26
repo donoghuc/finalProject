@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',work)
 function work() {
     document.getElementById('submit').addEventListener('click', function(event) {
         
-        var value = document.getElementById('name');
+        var value = document.getElementById('name').textContent;
         document.getElementById('DOMtest').textContent=value;
         event.preventDefault();
     });
