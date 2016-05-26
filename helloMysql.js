@@ -43,35 +43,14 @@ app.get('/insert',function(req,res,next){
       return;
     }
 
-
-    /*
     context.newID = result.insertId;
-    res.send(context);*/
+    res.send(context);
     //context.results = "Inserted id " + result.insertId;
     //res.render('home',context);
   });
 
-    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
 
-    var workoutDBdata = [];
 
-    for(var i in rows) {
-      workoutDBdata.push({'id': rows[i].id,
-                          'name': rows[i].name,
-                          'reps': rows[i].reps,
-                          'weight': rows[i].weight,
-                          'lbs': rows[i].lbs,
-                          'date': rows[i].date});   
-    }
-
-    context.workoutDBdata = workoutDBdata;
-    res.render('home', context);
-    
-  });
 
 });
 /*
