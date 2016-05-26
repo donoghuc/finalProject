@@ -18,7 +18,7 @@ function work() {
                 //var response = JSON.parse(req.responseText);
                 var response = JSON.parse(req.responseText);
                 var workoutDB = document.getElementById('workoutDB');
-                var newRow = workoutDB.insertRow(-1); 
+                var newRow; 
 
                 var cell = document.createElement('td');
                 cell.textContent = "test";
@@ -38,6 +38,8 @@ function work() {
                                 var cell = document.createElement('td');
                 cell.textContent = "test";
                 newRow.appendChild(cell);
+
+                workoutDB.appendChild(newRow);
             }
         });
         req.send(null); 
