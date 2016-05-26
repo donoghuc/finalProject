@@ -24,8 +24,8 @@ app.get('/',function(req,res,next){
                           'name': rows[i].name,
                           'reps': rows[i].reps,
                           'weight': rows[i].weight,
-                          'date': rows[i].lbs,
-                          'lbs': rows[i].date});   
+                          'lbs': rows[i].lbs,
+                          'date': rows[i].date});   
     }
 
     context.workoutDBdata = workoutDBdata;
