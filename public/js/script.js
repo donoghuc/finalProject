@@ -15,7 +15,8 @@ function work() {
         req.open('GET', url, true);
         req.addEventListener('load',function(){
             if(req.status >= 200 && req.status < 400) {
-                var response = JSON.parse(req.responseText);
+                //var response = JSON.parse(req.responseText);
+                var response = req.responseText;
                 document.getElementById('DOMtest').textContent = response;
             }
         });
