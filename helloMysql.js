@@ -44,6 +44,10 @@ app.get('/insert',function(req,res,next){
       return;
     }
     newID = result.insertId; 
+    console.log("new id:")
+    console.log(newID);
+    console.log("result:")
+    console.log(result.insertID);
     mysql.ppol.query("SELECT * FROM workouts WHERE id=?", newID, function(err,result){
     if(err){
       next(err);
