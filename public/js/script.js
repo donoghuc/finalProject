@@ -17,7 +17,27 @@ function work() {
             if(req.status >= 200 && req.status < 400) {
                 //var response = JSON.parse(req.responseText);
                 var response = JSON.parse(req.responseText);
-                document.getElementById('DOMtest').textContent = response.name;
+                var workoutDB = document.getElementById('workoutDB');
+                var newRow = workoutDB.insertRow(-1); 
+
+                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
+                                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
+                                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
+                                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
+                                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
+                                var cell = document.createElement('td');
+                cell.textContent = "test";
+                newRow.appendChild(cell);
             }
         });
         req.send(null); 
