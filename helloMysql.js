@@ -161,8 +161,8 @@ app.get('/reset-table',function(req,res,next){
     "name VARCHAR(255) NOT NULL,"+
     "reps INT,"+
     "weight INT,"+
-    "date BOOLEAN,"+
-    "lbs DATE)";
+    "date DATE,"+
+    "lbs BOOLEAN)";
     mysql.pool.query(createString, function(err){
       context.results = "Table reset";
       res.render('home',context);
