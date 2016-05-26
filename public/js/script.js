@@ -4,7 +4,14 @@ function work() {
     document.getElementById('submit').addEventListener('click', function(event) {
         
         var formData = document.getElementById('addNew');
-        document.getElementById('DOMtest').textContent = formData.elements.name.value;
+        var url = '/insert?name=' + formData.elements.name.value +
+                                   '&reps=' + formData.elements.reps.value +
+                                   '&weight=' + formData.elements.weight.value +
+                                   '&lbs=' + formData.elements.lbs.value +
+                                   '&date=' formData.elements.date.value;
+
+
+        document.getElementById('DOMtest').textContent = url;
         event.preventDefault();
     });
 
