@@ -16,7 +16,19 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
-    context.results = JSON.stringify(rows);
+
+    var workoutDBdata = [];
+
+    for(var i in rows) {
+      workoutDBdata.push({'id': rows[i].id,
+                          'name': rows[i].name,
+                          'reps': rows[i].reps,
+                          'weight': rows[i].weight,
+                          'date': rows[i].lbs,
+                          'lbs': rows[i].date})    
+    }
+
+    context.workoutDBdata = workoutDBdata;
     res.render('home', context);
   });
 });
