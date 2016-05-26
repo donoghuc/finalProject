@@ -42,7 +42,7 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    mysql.pool.query("SELECT workouts WHERE id=?",[result.insertId],function(err,result){
+    mysql.pool.query("SELECT * FROM workouts WHERE id=?",[result.insertId],function(err,result){
       if(err){
         next(err);
         return;
