@@ -36,33 +36,27 @@ app.get('/',function(req,res,next){
 
 app.get('/insert',function(req,res,next){
   var context = {};
-  var newID;
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`lbs`,`date`) VALUES (?,?,?,?,?)", [req.query.name,
     req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
     if(err){
       next(err);
       return;
     }
-    newID = result.insertId; 
-    console.log("new id:")
-    console.log(newID);
-
-  });
-    console.log("new id:")
-    console.log(newID);
-  mysql.ppol.query("SELECT * FROM workouts WHERE id=?", newID, function(err,result){
-    if(err){
-      next(err);
-      return;
-    }
-      context=rows;
-      res.send(context);
+    mysql.pool.query("SELECT workouts WHERE id=?",[result.insertId],function(err,result){
+      if(err){
+        next(err);
+        return;
+      }
+      if(result.length == 1) {
+        var newRow = result[0];
+        res.send(newRow);
+      }
     });
     //context.newID = result.insertId;
     //res.send(context);
     //context.results = "Inserted id " + result.insertId;
     //res.render('home',context);
-
+  });
 
 
 
