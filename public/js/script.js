@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded',work)
+
+function work() {
+    document.getElementById('DOMtest').textContent='DOM working!'
+}
+
+
+
 /*Cas Donoghue
 CS290 WEB DEV
 29APR2016
