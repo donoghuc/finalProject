@@ -20,26 +20,32 @@ function work() {
                 var workoutDB = document.getElementById('workoutDB');
                 var newRow = document.createElement('tr'); 
 
+                console.log(response.id);
                 var idCell = document.createElement('td');
                 idCell.textContent = response.id;
                 newRow.appendChild(cell);
 
+                console.log(response.name);
                 var nameCell = document.createElement('td');
                 nameCell.textContent = response.name;
                 newRow.appendChild(cell);
 
+                console.log(response.reps);
                 var repsCell = document.createElement('td');
                 repsCell.textContent = response.reps;
                 newRow.appendChild(cell);
 
+                console.log(response.weight);
                 var weightCell = document.createElement('td');
                 cell.textContent = response.weight;
                 newRow.appendChild(cell);
 
+                console.log(response.lbs);
                 var lbsCell = document.createElement('td');
                 lbsCell.textContent = response.lbs;
                 newRow.appendChild(cell);
 
+                console.log(response.date);
                 var dateCell = document.createElement('td');
                 dateCell.textContent = response.date;
                 newRow.appendChild(cell);
