@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded',work)
 
 function work() {
-    document.getElementById('submit').addEventListener('click',fucntion(event){
+    document.getElementById('submit').addEventListener('click',fucntion(event) {
         document.getElementById('DOMtest').textContent='you clciked';
+        event.preventDefault();
     });
+
 }
 
 
