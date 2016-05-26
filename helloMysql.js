@@ -35,15 +35,17 @@ app.get('/',function(req,res,next){
 });
 
 app.get('/insert',function(req,res,next){
-  var context = {};
+  //var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`lbs`,`date`) VALUES (?,?,?,?,?)", [req.query.name,
     req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
     if(err){
       next(err);
       return;
     }
-    context.results = "Inserted id " + result.insertId;
-    res.render('home',context);
+    var varialbe = "made it";
+    res.send(varialbe);
+    //context.results = "Inserted id " + result.insertId;
+    //res.render('home',context);
   });
 });
 /*
