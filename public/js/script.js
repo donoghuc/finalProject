@@ -4,7 +4,7 @@ function work() {
     document.getElementById('submit').addEventListener('click', function(event) {
         
         var formData = document.getElementById('addNew');
-        document.getElementById('DOMtest').textContent = formData.elements.value;
+        document.getElementById('DOMtest').textContent = formData.elements.name.value;
         event.preventDefault();
     });
 
