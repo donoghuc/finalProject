@@ -22,7 +22,8 @@ function work() {
 
                 console.log(response.id);
                 var idCell = document.createElement('td');
-                idCell.textContent = response.id;
+                var idValue = response.id;
+                idCell.appendChild(idValue);
                 newRow.appendChild(cell);
 
                 console.log(response.name);
