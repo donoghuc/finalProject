@@ -42,7 +42,7 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    var varialbe = "made it";
+    var newID = result.id;
     res.send(varialbe);
     //context.results = "Inserted id " + result.insertId;
     //res.render('home',context);
