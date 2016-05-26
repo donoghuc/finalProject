@@ -62,6 +62,7 @@ app.get('/insert',function(req,res,next){
 
     context.workoutDBdata = workoutDBdata;
     res.render('home', context);
+    });
     /*
     context.newID = result.insertId;
     res.send(context);*/
