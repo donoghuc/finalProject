@@ -44,7 +44,7 @@ function work() {
 
                 var btn = document.createElement("BUTTON");
                 var t = document.createTextNode("Delete");
-                btn.appendChild(t);
+                btn.onclick = deleteFunction(response.id);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
