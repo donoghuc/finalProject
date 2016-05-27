@@ -58,8 +58,8 @@ function work() {
     });
 
     document.getElementById('deleteMe').addEventListener('click', function(event) {
-    deleteFunction(this.value) 
-    };
+    deleteFunction(this.value);
+    });
 }
 
 function deleteFunction(rowToDelete) {
