@@ -42,11 +42,11 @@ function work() {
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
-                var btn = document.createElement("input");
+                var btn = document.createElement("deleteMe");
                 btn.type = "button";
-                btn.value = "Deleteme";
+                btn.value = response.id;
                 //var t = document.createTextNode("Delete");
-                btn.onclick = "deleteFunction(response.id)";
+                //btn.onclick = "deleteFunction(response.id)";
                 //btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
@@ -57,7 +57,9 @@ function work() {
         event.preventDefault();
     });
 
-
+    document.getElementById('deleteMe').addEventListener('click', function(event) {
+    deleteFunction(this.value) 
+    };
 }
 
 function deleteFunction(rowToDelete) {
