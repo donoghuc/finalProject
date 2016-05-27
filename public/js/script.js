@@ -53,7 +53,7 @@ function work() {
         event.preventDefault();
     });
 
-    document.getElementById("{{this.id}}").style.backgroundColor = "blue";
+    document.getElementById("3").style.backgroundColor = "blue";
 }
 
 function deleteFunction(rowToDelete) {
