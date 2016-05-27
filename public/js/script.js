@@ -44,11 +44,11 @@ function work() {
 
                 var btn = document.createElement("BUTTON");
                 btn.type = "button";
-                btn.name = "Delete";
+                //btn.name = "Delete";
                 btn.value = response.id;
-                //var t = document.createTextNode("Delete");
+                var t = document.createTextNode("Delete");
                 btn.onclick = function() {deleteFunction(this.value)};
-                //btn.appendChild(t);
+                btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
