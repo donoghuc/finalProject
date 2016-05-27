@@ -72,8 +72,9 @@ function deleteFunction(rowToDelete) {
     //var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
     console.log(url); 
-/*
+
     req.open('Get',url,true);
+
     req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400) {
             //get response
@@ -82,9 +83,9 @@ function deleteFunction(rowToDelete) {
             console.log("Error sending delete request");
         }
 
-    };
+    });
     req.send(null);
-    event.preventDefault(); */
+    event.preventDefault(); 
 };
 
 
