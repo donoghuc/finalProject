@@ -52,10 +52,11 @@ function work() {
         req.send(null); 
         event.preventDefault();
     });
+}
 
 function deleteFunction(rowToDelete) {
     console.log(rowToDelete);
 };
 
 
-}
+
