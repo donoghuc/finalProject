@@ -25,10 +25,10 @@ app.get('/',function(req,res,next){
       rowToObject.name = rows[i].name;
       rowToObject.reps = rows[i].reps;
       rowToObject.weight = rows[i].weight; 
-      if (rows[i].lbs == "1") {
+      if (rows[i].lbs == true) {
         rowToObject.lbs = "lbs";
       }
-      else if (rows[i].lbs == "0") {
+      else if (rows[i].lbs == false) {
         rowToObject.lbs = "kg";
       }
       rowToObject.lbs = rows[i].lbs;
