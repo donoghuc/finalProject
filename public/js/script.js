@@ -42,12 +42,14 @@ function work() {
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
+                //Idea here is to create a button like in the home.handlebars. building w/DOM is different
+                //than rendering w/handlbars. basic idea is to get the id of the row to be deleted associated 
+                //with a butting (assigned to its value). this was a trip to figure out (especcialy the onclick assignment...)
                 var btn = document.createElement("BUTTON");
                 btn.type = "button";
-                //btn.name = "Delete";
                 btn.value = response.id;
                 var t = document.createTextNode("Delete");
-                btn.onclick = function() {deleteFunction(this.value)};
+                btn.onclick = function() {deleteFunction(this.value)};  //this took me some time to figure out :)
                 btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
@@ -57,15 +59,30 @@ function work() {
         req.send(null); 
         event.preventDefault();
     });
-    /*
-    document.getElementById('deleteMe').addEventListener('click', function(event) {
-    deleteFunction(this.value);
-    }); */
+
 }
 
+//This is my delete function. The trick here for me was to get the row number to delete by clicking the
+//delet button rendered w/DOM based on Ajax as well as from buttons rendered via handlebars. 
+//really quite a trip.
 function deleteFunction(rowToDelete) {
     document.getElementById(rowToDelete).style.backgroundColor = "blue";
     console.log(rowToDelete);
+
+    var req = new XMLHttpRequest();
+    var url = '/delete/?id=' + rowToDelete;
+    console.log(getParams); 
+
+    req.open('Get',url,true);
+    req.addEventListener('load',function(){
+    if(req.status >= 200 && req.status < 400) {
+        //get response
+        console.log("deleted");
+    } else {
+        console.log("Error sending delete request");
+    }
+    req.send(null);
+    };
 };
 
 
