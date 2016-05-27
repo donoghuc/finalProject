@@ -20,12 +20,28 @@ app.get('/',function(req,res,next){
     var workoutDBdata = [];
 
     for(var i in rows) {
-      workoutDBdata.push({'id': rows[i].id,
+      var rowToObject = {};
+      rowToObject.id = rows[i].id;
+      rowToObject.name = rows[i].name;
+      rowToObject.reps = rows[i].reps;
+      rowToObject.weight = rows[i].weight; 
+      if (rows[i].lbs == 1) {
+        rowToObject.lbs = "lbs";
+      }
+      else if (rows[i].lbs == 0) {
+        rowToObject.lbs = "kg";
+      }
+      rowToObject.lbs = rows[i].lbs;
+      rowToObject.date = rows[i].date; 
+
+      workoutDBdata.push(rowToObject);
+
+     /* workoutDBdata.push({'id': rows[i].id,
                           'name': rows[i].name,
                           'reps': rows[i].reps,
                           'weight': rows[i].weight,
                           'lbs': rows[i].lbs,
-                          'date': rows[i].date});   
+                          'date': rows[i].date});   */
     }
 
     context.workoutDBdata = workoutDBdata;
