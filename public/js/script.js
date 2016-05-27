@@ -69,7 +69,7 @@ function deleteFunction(rowToDelete) {
     document.getElementById(rowToDelete).style.backgroundColor = "blue";
     console.log(rowToDelete);
 
-    //var req = new XMLHttpRequest();
+    var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
     console.log(url); 
 
