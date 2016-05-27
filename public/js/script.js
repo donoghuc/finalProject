@@ -52,6 +52,8 @@ function work() {
         req.send(null); 
         event.preventDefault();
     });
+
+    document.getElementById("{{this.id}}").style.backgroundColor = "blue";
 }
 
 function deleteFunction(rowToDelete) {
