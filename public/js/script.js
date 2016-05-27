@@ -42,10 +42,12 @@ function work() {
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
-                var btn = document.createElement("BUTTON");
-                var t = document.createTextNode("Delete");
+                var btn = document.createElement("input");
+                btn.type = "button";
+                button.value = "Delete";
+                //var t = document.createTextNode("Delete");
                 btn.onclick = deleteFunction(response.id);
-                btn.appendChild(t);
+                //btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
