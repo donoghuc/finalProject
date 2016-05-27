@@ -46,7 +46,7 @@ function work() {
                 btn.type = "button";
                 btn.value = response.id;
                 //var t = document.createTextNode("Delete");
-                //btn.onclick = "deleteFunction(response.id)";
+                btn.onclick = function {deleteFunction(this.value)};
                 //btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
@@ -56,10 +56,10 @@ function work() {
         req.send(null); 
         event.preventDefault();
     });
-
+    /*
     document.getElementById('deleteMe').addEventListener('click', function(event) {
     deleteFunction(this.value);
-    });
+    }); */
 }
 
 function deleteFunction(rowToDelete) {
