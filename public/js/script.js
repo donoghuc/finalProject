@@ -18,7 +18,7 @@ function work() {
                 //var response = JSON.parse(req.responseText);
                 var response = JSON.parse(req.responseText);
                 var workoutDB = document.getElementById('workoutDB');
-                var newRow = document.insertRow(-1);
+                var newRow = workoutDB.insertRow(-1);
 
                 console.log(response.id);
                 var newCell = newRow.insertCell(-1);
