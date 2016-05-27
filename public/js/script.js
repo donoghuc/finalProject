@@ -86,6 +86,14 @@ function deleteFunction(rowToDelete) {
     });
     req.send(null);
     event.preventDefault(); 
+
+    var child = document.getElementById(rowToDelete);
+
+    var parent = document.getElementById("tableBody"); 
+
+    parent.removeChild(child);
+
+
 };
 
 
