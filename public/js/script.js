@@ -53,10 +53,11 @@ function work() {
         event.preventDefault();
     });
 
-    document.getElementById("3").style.backgroundColor = "blue";
+
 }
 
 function deleteFunction(rowToDelete) {
+    document.getElementById(rowToDelete).style.backgroundColor = "blue";
     console.log(rowToDelete);
 };
 
