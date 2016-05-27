@@ -71,7 +71,7 @@ function deleteFunction(rowToDelete) {
 
     //var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
-    console.log(getParams); 
+    console.log(url); 
 /*
     req.open('Get',url,true);
     req.addEventListener('load',function(){
