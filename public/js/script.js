@@ -44,7 +44,7 @@ function work() {
 
                 var btn = document.createElement("input");
                 btn.type = "button";
-                btn.value = "Delete";
+                btn.value = "Deleteme";
                 //var t = document.createTextNode("Delete");
                 btn.onclick = deleteFunction(response.id);
                 //btn.appendChild(t);
