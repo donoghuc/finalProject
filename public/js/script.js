@@ -69,10 +69,10 @@ function deleteFunction(rowToDelete) {
     document.getElementById(rowToDelete).style.backgroundColor = "blue";
     console.log(rowToDelete);
 
-    var req = new XMLHttpRequest();
+    //var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
     console.log(getParams); 
-
+/*
     req.open('Get',url,true);
     req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400) {
@@ -84,6 +84,7 @@ function deleteFunction(rowToDelete) {
 
     };
     req.send(null);
+    event.preventDefault(); */
 };
 
 
