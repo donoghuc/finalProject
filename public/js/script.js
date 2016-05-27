@@ -53,4 +53,9 @@ function work() {
         event.preventDefault();
     });
 
+function deleteFunction(rowToDelete) {
+    console.log(rowToDelete);
+};
+
+
 }
