@@ -28,6 +28,7 @@ function work() {
                 //this just appends the row visually using DOM (that way you dont have to reload to see what you added)
                 var workoutDB = document.getElementById('workoutDB');
                 var newRow = workoutDB.insertRow(-1);
+                newRow.setAttribute("id",response.id);
                 //love how easy it is to get through object params in JS (been in c world for Operating systems class...)
                 for (var prop in response) {
                     var newCell = newRow.insertCell(-1);
