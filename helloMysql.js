@@ -31,7 +31,7 @@ app.get('/',function(req,res,next){
       else if (rows[i].lbs == false) {
         rowToObject.lbs = "kg";
       }
-      rowToObject.lbs = rows[i].lbs;
+      
       rowToObject.date = rows[i].date; 
 
       console.log(rowToObject.lbs);
