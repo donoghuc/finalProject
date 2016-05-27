@@ -9,9 +9,13 @@ app.set('view engine', 'handlebars');
 app.set('port', 3000);
 app.use(express.static('public'));
 
+/* here is the main page. you get everything from the database when you navigate here. 
+All rendering is done in home.handlebars here. it sets up the table and sets up my 
+system for indexing the rows to be editid and deletid (id=joke)*/
 app.get('/',function(req,res,next){
-  var context = {};
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+  var context = {}; //for rendering in handlebars
+  //set up call to mysql (modified from worlford github examples)
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){  
     if(err){
       next(err);
       return;
@@ -42,6 +46,9 @@ app.get('/',function(req,res,next){
   });
 });
 
+/* This is the badass that i started with. the work is easy (from /insert method for in class material)
+Making it happen asynchonous w/o reloading page was the hard part. */
+
 app.get('/insert',function(req,res,next){
   var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`lbs`,`date`) VALUES (?,?,?,?,?)", [req.query.name,
@@ -70,27 +77,15 @@ app.get('/insert',function(req,res,next){
 
 
 });
-/*
+
+/*THis will take the id of the row to be deleted. It is pretty straight forward
+no response. didnt need much here Ajax is doing alot in script.js*/
 app.get('/delete',function(req,res,next){
-  var context = {};
-  mysql.pool.query("DELETE FROM todo WHERE id=?", [req.query.id], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = "Deleted " + result.changedRows + " rows.";
-    res.render('home',context);
-  });
-});
-*/
-app.get('/delete',function(req,res,next){
-  var context = {};
   mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
     }
-   // context.results = "Deleted " + result.changedRows + " rows.";
     res.send(null);
   });
 });
