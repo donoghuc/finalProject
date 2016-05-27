@@ -34,7 +34,7 @@ app.get('/',function(req,res,next){
       rowToObject.lbs = rows[i].lbs;
       rowToObject.date = rows[i].date; 
 
-      console.log(rowToObject);
+      console.log(rowToObject.lbs);
 
       workoutDBdata.push(rowToObject);
 
