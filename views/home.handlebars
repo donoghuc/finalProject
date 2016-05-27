@@ -37,6 +37,8 @@
 			<th>Weight</th>
 			<th>Units</th>
 			<th>Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 	</thead>
 	<tbody id="body">
@@ -49,6 +51,8 @@
 			<td>{{this.weight}}</td>
 			<td>{{this.lbs}}</td>
 			<td>{{this.date}}</td>
+			<td><button type="button" id="edit">Edit</button></td>
+			<td><button type="button" id="delete">Delete</button></td>
 		</tr>
 	{{/each}}
 	</tbody>

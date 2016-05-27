@@ -35,6 +35,18 @@ function work() {
                     newCell.appendChild(newText);
                 }
 
+                var btn = document.createElement("BUTTON");
+                var t = document.createTextNode("Edit");
+                btn.appendChild(t);
+                var editCell = newRow.insertCell(-1)
+                editCell.appendChild(btn);
+
+                var btn = document.createElement("BUTTON");
+                var t = document.createTextNode("Delete");
+                btn.appendChild(t);
+                var editCell = newRow.insertCell(-1)
+                editCell.appendChild(btn);
+
             }
         });
         req.send(null); 
