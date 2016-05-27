@@ -17,12 +17,12 @@ function work() {
             if(req.status >= 200 && req.status < 400) {
                 //var response = JSON.parse(req.responseText);
                 var response = JSON.parse(req.responseText);
-                if (response.lbs == "1") {
+                /*if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }
                 else {
                     response.lbs = "kg";
-                }
+                }*/
                 var workoutDB = document.getElementById('workoutDB');
                 var newRow = workoutDB.insertRow(-1);
 
