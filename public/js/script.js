@@ -18,10 +18,10 @@ function work() {
                 //var response = JSON.parse(req.responseText);
                 var response = JSON.parse(req.responseText);
                 if (response.lbs == "1") {
-                    response.lbs = lbs;
+                    response.lbs = "lbs";
                 }
                 else {
-                    response.lbs = kg;
+                    response.lbs = "kg";
                 }
                 var workoutDB = document.getElementById('workoutDB');
                 var newRow = workoutDB.insertRow(-1);
