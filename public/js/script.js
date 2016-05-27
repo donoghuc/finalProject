@@ -76,13 +76,14 @@ function deleteFunction(rowToDelete) {
     req.open('Get',url,true);
     req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400) {
-        //get response
-        console.log("deleted");
+            //get response
+            console.log("deleted");
     } else {
-        console.log("Error sending delete request");
-    }
-    req.send(null);
+            console.log("Error sending delete request");
+        }
+
     };
+    req.send(null);
 };
 
 
