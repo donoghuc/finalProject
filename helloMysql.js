@@ -16,37 +16,27 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
-
+    //array for sending back data for rendering table
     var workoutDBdata = [];
-
+    //get data and create an object to render in the workoutDBdata array
     for(var i in rows) {
       var rowToObject = {};
       rowToObject.id = rows[i].id;
       rowToObject.name = rows[i].name;
       rowToObject.reps = rows[i].reps;
       rowToObject.weight = rows[i].weight; 
-      if (rows[i].lbs == true) {
+      if (rows[i].lbs == true) {  //turn in to kg or lbs here based on bool value
         rowToObject.lbs = "lbs";
       }
       else if (rows[i].lbs == false) {
         rowToObject.lbs = "kg";
       }
-      
       rowToObject.date = rows[i].date; 
 
-      console.log(rowToObject.lbs);
-
-      workoutDBdata.push(rowToObject);
-
-     /* workoutDBdata.push({'id': rows[i].id,
-                          'name': rows[i].name,
-                          'reps': rows[i].reps,
-                          'weight': rows[i].weight,
-                          'lbs': rows[i].lbs,
-                          'date': rows[i].date});   */
+      workoutDBdata.push(rowToObject); //push into array
     }
 
-    context.workoutDBdata = workoutDBdata;
+    context.workoutDBdata = workoutDBdata; //render
     res.render('home', context);
     
   });
