@@ -22,7 +22,7 @@ function work() {
 
                 for (var prop in response) {
                     var newCell = newRow.insertCell(-1);
-                    var newText = document.createTextNode(prop);
+                    var newText = document.createTextNode(response[prop]);
                     newCell.appendChild(newText);
                 }
 
