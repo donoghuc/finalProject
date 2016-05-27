@@ -20,10 +20,12 @@ function work() {
                 var workoutDB = document.getElementById('workoutDB');
                 var newRow = workoutDB.insertRow(-1);
 
-                console.log(response.id);
-                var newCell = newRow.insertCell(-1);
-                var newText = document.createTextNode(response.id);
-                newCell.appendChild(newText);
+                for (var prop in response) {
+                    var newCell = newRow.insertCell(-1);
+                    var newText = document.createTextNode(prop);
+                    newCell.appendChild(newText);
+                }
+
                 /*var idCell = document.createElement('td');
                 var idValue = document.createTextNode(response.id);
                 idCell.appendChild(idValue);
