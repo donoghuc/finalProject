@@ -42,7 +42,7 @@ function work() {
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
-                var btn = document.createElement("deleteMe");
+                var btn = document.createElement("BUTTON");
                 btn.type = "button";
                 btn.value = response.id;
                 //var t = document.createTextNode("Delete");
