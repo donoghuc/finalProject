@@ -90,8 +90,8 @@ app.get('/delete',function(req,res,next){
       next(err);
       return;
     }
-    context.results = "Deleted " + result.changedRows + " rows.";
-    res.render('home',context);
+   // context.results = "Deleted " + result.changedRows + " rows.";
+    //res.render('home',context);
   });
 });
 
