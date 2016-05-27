@@ -52,7 +52,7 @@
 			<td>{{this.lbs}}</td>
 			<td>{{this.date}}</td>
 			<td><button type="button" id="edit">Edit</button></td>
-			<td><button type="button" id="delete" onclick="deleteFunction(this)">Delete</button></td>
+			<td><button type="button" id="delete" onclick="deleteFunction({{this.id}})">Delete</button></td>
 		</tr>
 	{{/each}}
 	</tbody>
