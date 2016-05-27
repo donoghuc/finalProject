@@ -22,7 +22,7 @@ function work() {
 
                 console.log(response.id);
                 var newCell = newRow.insertCell(-1);
-                var newText = document.createtextNode(response.id);
+                var newText = document.createTextNode(response.id);
                 newCell.appendChild(newText);
                 /*var idCell = document.createElement('td');
                 var idValue = document.createTextNode(response.id);
