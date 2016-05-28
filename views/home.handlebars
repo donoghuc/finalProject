@@ -51,7 +51,7 @@
 			<td>{{this.weight}}</td>
 			<td>{{this.lbs}}</td>
 			<td>{{this.date}}</td>
-			<td><button type="button" id="edit" onclick="window.location='/safe-update'">Edit</button></td>
+			<td><button type="button" id="edit" onclick="window.location='/safe-update/?id=' + {{this.id}}">Edit</button></td>
 			<td><button type="button" id="delete" onclick="deleteFunction({{this.id}})">Delete</button></td>
 		</tr>
 	{{/each}}
