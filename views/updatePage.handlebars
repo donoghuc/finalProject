@@ -14,7 +14,7 @@ that the form has been populated with the data that currently is saved for this 
 		<label for="weight">Total Weight: </label>
 		<input type="text" name="weight" id="weight" value="{{weight}}">
 
-		{{#if {{lbs}} == 1}}
+		{{#if {{lbs}} == true}}
 		<label for="lbs">Pounds (lbs): </label>
 		<input type="radio" name="lbs" value="1" id="lbs" checked="checked">
 		<label for="lbs">Kilograms (kg): </label>
@@ -32,3 +32,5 @@ that the form has been populated with the data that currently is saved for this 
 		<input type="submit" id="submitUpdate" value="Upload Workout">
 	</fieldset>
 </form>
+
+<p>{{lbs}}</p>
