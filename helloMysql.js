@@ -143,7 +143,15 @@ app.get('/safe-update',function(req,res,next){
     }
 
     rowData = result[0];
-    console.log(rowData.name); 
+    context.id = rowData.id;
+    context.name = rowData.name;
+    context.reps = rowData.reps;
+    context.weight = rowData.weight;
+    context.lbs = rowData.lbs; 
+    context.date = rowData.date;
+
+    res.render('updatePage', context);
+     
 
     
   });
