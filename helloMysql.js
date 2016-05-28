@@ -132,6 +132,8 @@ app.get('/safe-update',function(req,res,next){
 });
 */
 app.get('/safe-update',function(req,res,next){
+  console.log("made it");
+  /*
   var context = {};
   mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
@@ -151,7 +153,7 @@ app.get('/safe-update',function(req,res,next){
         res.render('home',context);
       });
     }
-  });
+  }); */
 });
 
 
