@@ -124,8 +124,8 @@ app.get('/update',function(req,res,next){
           next(err);
           return;
         }
-        context.results = "Updated " + result.changedRows + " rows.";
-        res.render('home',context);
+        /*context.results = "Updated " + result.changedRows + " rows.";
+        res.render('home',context);*/
       });
     }
   });
