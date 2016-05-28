@@ -1,3 +1,28 @@
-<h1>Workout Information</h1>
-<h2>Enter A New Workout</h2>
-<p>{{name}}</p>
+<h1>Update Workout</h1>
+<h2>Enter Updated Workout Information</h2>
+<p>Fill out the form below detailing your exercises. Note the date format and dont forget to select unit of mass. Also note
+that the form has been populated with the data that currently is saved for this particular entry.</p>
+<form id="update" action="/update">
+	<fieldset>
+		<legend>New Workout Entry</legend>
+		<label for="name">Exercise Name: </label>
+		<input type="text" name="name" id="name" value="{{name}}">
+		<br />
+		<label for="reps">Repititions: </label>
+		<input type="text" name="reps" id="reps" value="{{reps}}">
+		<br />
+		<label for="weight">Total Weight: </label>
+		<input type="text" name="weight" id="weight" value="{{weight}}">
+		
+		<label for="lbs">Pounds (lbs): </label>
+		<input type="radio" name="lbs" value="1" id="lbs">
+		<label for="lbs">Kilograms (kg): </label>
+		<input type="radio" name="lbs" value="0" id="lbs">
+
+		<br />
+		<label for="date">Date Performed (format example: 2016-5-25): </label>
+		<input type="text" name="date" id="date" value="{{date}}">
+		<br />
+		<input type="submit" id="submitUpdate" value="Upload Workout">
+	</fieldset>
+</form>

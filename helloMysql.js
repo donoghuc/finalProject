@@ -106,9 +106,9 @@ app.get('/simple-update',function(req,res,next){
   });
 });
 */
-/*
+
 ///safe-update?id=1&name=The+Task&done=false
-app.get('/safe-update',function(req,res,next){
+app.get('/update',function(req,res,next){
   var context = {};
   mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.id], function(err, result){
     if(err){
@@ -130,7 +130,7 @@ app.get('/safe-update',function(req,res,next){
     }
   });
 });
-*/
+
 app.get('/safe-update',function(req,res,next){
   console.log("made it");
   console.log(req.query.id);
@@ -151,25 +151,8 @@ app.get('/safe-update',function(req,res,next){
     context.date = rowData.date;
 
     res.render('updatePage', context);
-     
-
-    
   });
-    /*
-    if(result.length == 1){
-      var curVals = result[0];
-      mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
-        [req.query.name || curVals.name, req.query.reps || curVals.reps, req.query.weight || curVals.weight, req.query.date || curVals.date, req.query.lbs || curVals.lbs, req.query.id],
-        function(err, result){
-        if(err){
-          next(err);
-          return;
-        }
-        context.results = "Updated " + result.changedRows + " rows.";
-        res.render('home',context);
-      });
-    }
-  }); */
+
 });
 
 
