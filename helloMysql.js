@@ -142,7 +142,8 @@ app.get('/safe-update',function(req,res,next){
       return;
     }
 
-    console.log(result); 
+    rowData = result[0];
+    console.log(rowData.name); 
 
     
   });
