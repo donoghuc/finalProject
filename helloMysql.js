@@ -144,7 +144,7 @@ app.get('/safe-update',function(req,res,next){
 
     console.log(rows[0].name); 
 
-    }
+    
   });
     /*
     if(result.length == 1){
