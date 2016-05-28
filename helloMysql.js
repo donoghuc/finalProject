@@ -110,15 +110,15 @@ app.get('/simple-update',function(req,res,next){
 ///safe-update?id=1&name=The+Task&done=false
 app.get('/update',function(req,res,next){
   var context = {};
-  mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.id], function(err, result){
+  mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
     }
     if(result.length == 1){
       var curVals = result[0];
-      mysql.pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ",
-        [req.query.name || curVals.name, req.query.done || curVals.done, req.query.due || curVals.due, req.query.id],
+      mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, lbs=?, date=? WHERE id=? ",
+        [req.query.name || curVals.name, req.query.reps || curVals.reps, req.query.weight || curVals.weight, req.query.lbs || curVals.lbs, req.query.date || curVals.date, req.query.id],
         function(err, result){
         if(err){
           next(err);
@@ -128,6 +128,35 @@ app.get('/update',function(req,res,next){
         res.render('home',context);
       });
     }
+  });
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){  
+    if(err){
+      next(err);
+      return;
+    }
+    //array for sending back data for rendering table
+    var workoutDBdata = [];
+    //get data and create an object to render in the workoutDBdata array
+    for(var i in rows) {
+      var rowToObject = {};
+      rowToObject.id = rows[i].id;
+      rowToObject.name = rows[i].name;
+      rowToObject.reps = rows[i].reps;
+      rowToObject.weight = rows[i].weight; 
+      if (rows[i].lbs == true) {  //turn in to kg or lbs here based on bool value
+        rowToObject.lbs = "lbs";
+      }
+      else if (rows[i].lbs == false) {
+        rowToObject.lbs = "kg";
+      }
+      rowToObject.date = rows[i].date; 
+
+      workoutDBdata.push(rowToObject); //push into array
+    }
+
+    context.workoutDBdata = workoutDBdata; //render
+    res.render('home', context);
+    
   });
 });
 
