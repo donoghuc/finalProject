@@ -134,13 +134,19 @@ app.get('/safe-update',function(req,res,next){
 app.get('/safe-update',function(req,res,next){
   console.log("made it");
   console.log(req.query.id);
-  /*
+
   var context = {};
   mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
     }
+
+    console.log(rows[0].name); 
+
+    }
+  });
+    /*
     if(result.length == 1){
       var curVals = result[0];
       mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
