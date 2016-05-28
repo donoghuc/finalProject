@@ -39,7 +39,7 @@ function work() {
                 var btn0 = document.createElement("BUTTON");
                 btn0.type = 'button';
                 btn0.value = response.id; 
-                btn0.onclick = function() {window.location = '/safe-update/?id=' + this.value;}
+                btn0.onclick = function() {window.location = '/safe-update/?id=' + this.value;};
                 var t = document.createTextNode("Edit");
                 btn.appendChild(t);
                 var editCell = newRow.insertCell(-1)
