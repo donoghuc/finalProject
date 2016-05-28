@@ -5,6 +5,7 @@ that the form has been populated with the data that currently is saved for this 
 <form id="update" action="/update">
 	<fieldset>
 		<legend>Update Workout Entry</legend>
+		<input type="hidden" name="id" value="{{id}}">
 		<label for="name">Exercise Name: </label>
 		<input type="text" name="name" id="name" value="{{name}}">
 		<br />
