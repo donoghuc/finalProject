@@ -126,10 +126,7 @@ app.get('/update',function(req,res,next){
         }
         /*context.results = "Updated " + result.changedRows + " rows.";
         res.render('home',context);*/
-      });
-    }
-  });
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){  
+          mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){  
     if(err){
       next(err);
       return;
@@ -158,6 +155,10 @@ app.get('/update',function(req,res,next){
     res.render('home', context);
     
   });
+      });
+    }
+  });
+
 });
 
 app.get('/safe-update',function(req,res,next){
