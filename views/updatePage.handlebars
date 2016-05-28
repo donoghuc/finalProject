@@ -4,7 +4,7 @@
 that the form has been populated with the data that currently is saved for this particular entry.</p>
 <form id="update" action="/update">
 	<fieldset>
-		<legend>New Workout Entry</legend>
+		<legend>Update Workout Entry</legend>
 		<label for="name">Exercise Name: </label>
 		<input type="text" name="name" id="name" value="{{name}}">
 		<br />
@@ -13,12 +13,18 @@ that the form has been populated with the data that currently is saved for this 
 		<br />
 		<label for="weight">Total Weight: </label>
 		<input type="text" name="weight" id="weight" value="{{weight}}">
-		
+
+		{{#if lbs == 1}}
+		<label for="lbs">Pounds (lbs): </label>
+		<input type="radio" name="lbs" value="1" id="lbs" checked="checked">
+		<label for="lbs">Kilograms (kg): </label>
+		<input type="radio" name="lbs" value="0" id="lbs">
+		{{#else}}
 		<label for="lbs">Pounds (lbs): </label>
 		<input type="radio" name="lbs" value="1" id="lbs">
 		<label for="lbs">Kilograms (kg): </label>
-		<input type="radio" name="lbs" value="0" id="lbs">
-
+		<input type="radio" name="lbs" value="0" id="lbs" checked="checked">
+		{{/if}}
 		<br />
 		<label for="date">Date Performed (format example: 2016-5-25): </label>
 		<input type="text" name="date" id="date" value="{{date}}">
