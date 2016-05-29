@@ -24,11 +24,13 @@ function work() {
             if(req.status >= 200 && req.status < 400) {
                 //get response
                 var response = JSON.parse(req.responseText); //this parses the returned row 
-                //modify based on boolean value for lbs (true) kg (false)
-                //console.log(response);
+                
+                
+                // if name field was missing then populate span indicating the data has not been updated into database
                 if (response.nameMissing) {
                     document.getElementById('blankName').innerHTML = "Name Field Is Required";
                 } else {
+                //modify based on boolean value for lbs (true) kg (false)
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }
@@ -41,13 +43,7 @@ function work() {
                 newRow.setAttribute("id",response.id);
                 //love how easy it is to get through object params in JS (been in c world for Operating systems class...)
                 for (var prop in response) {
-                    if (prop != "id") {
-                        console.log("id found good");
-                        /*var idCell = newRow.insertCell(-1);
-                        var newCellText = document.createTextNode(response[prop]);
-                        idCell.appendChild(newCellText);
-                        idCell.style = "display:none"; */
-                    
+                    if (prop != "id") { //dont insert into the id feild
                     var newCell = newRow.insertCell(-1);
                     var newText = document.createTextNode(response[prop]);
                     newCell.appendChild(newText);
