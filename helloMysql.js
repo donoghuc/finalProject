@@ -53,11 +53,8 @@ app.get('/insert',function(req,res,next){
  // var context = {};
 
  if (req.query.name == "") {
-  var arrayFormat = [];
-  var object = {}
-  object.noName = true;
-  arrayFormat.push(object);
-  res.send(arrayFormat);
+  var noName = JSON.stringify({ nameMissing: true })
+  res.send(noName);
  } 
  else {
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`lbs`,`date`) VALUES (?,?,?,?,?)", [req.query.name,
