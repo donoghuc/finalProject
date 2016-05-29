@@ -70,7 +70,7 @@ function work() {
         req.send(null); 
         event.preventDefault();
     }
-    });
+    }, false);
 
 }
 
