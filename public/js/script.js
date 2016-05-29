@@ -28,7 +28,7 @@ function work() {
                 console.log(response);
                 if (response.nameMissing) {
                     document.getElementById('blankName').innerHTML = "Name Field Is Required";
-                } 
+                } else {
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }
@@ -70,6 +70,7 @@ function work() {
                 editCell.appendChild(btn);
 
             }
+        }
         });
         req.send(null); 
         event.preventDefault();
