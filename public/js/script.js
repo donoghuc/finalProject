@@ -25,7 +25,7 @@ function work() {
                 //get response
                 var response = JSON.parse(req.responseText); //this parses the returned row 
                 //modify based on boolean value for lbs (true) kg (false)
-                console.log(response);
+                //console.log(response);
                 if (response.nameMissing) {
                     document.getElementById('blankName').innerHTML = "Name Field Is Required";
                 } else {
@@ -88,7 +88,7 @@ function deleteFunction(rowToDelete) {
     
     var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
-    console.log(url); 
+    //console.log(url); 
 
     req.open('Get',url,true);
 
