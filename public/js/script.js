@@ -35,7 +35,9 @@ function work() {
                     var newText = document.createTextNode(response[prop]);
                     newCell.appendChild(newText);
                 }
-
+                /*I implemented the delete button first. THis one was CAKE compared to Delete (bc i allredy 
+                figure out the attribute assignments. Basically, just take you to /safe-update and assign the 
+                */
                 var btn0 = document.createElement("BUTTON");
                 btn0.type = 'button';
                 btn0.value = response.id; 
@@ -69,9 +71,7 @@ function work() {
 //delet button rendered w/DOM based on Ajax as well as from buttons rendered via handlebars. 
 //really quite a trip.
 function deleteFunction(rowToDelete) {
-    document.getElementById(rowToDelete).style.backgroundColor = "blue";
-    console.log(rowToDelete);
-
+    
     var req = new XMLHttpRequest();
     var url = '/delete/?id=' + rowToDelete;
     console.log(url); 
