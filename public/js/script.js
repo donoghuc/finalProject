@@ -6,10 +6,10 @@ function work() {
     var error = document.querySelector('.error');
     document.getElementById('submit').addEventListener('click', function(event) {
         //
-        if(namePresent.validity.valueMissing) {
+       /* if(namePresent.validity.valueMissing) {
             error.innerHTML = "Name Field Required";
             event.preventDefault();
-        } else {
+        } else {*/
         var formData = document.getElementById('addNew'); //get data from form and put into query string
         var url = "/insert/?name=" + formData.elements.name.value +
                   "&reps=" + formData.elements.reps.value + 
@@ -66,10 +66,10 @@ function work() {
                 editCell.appendChild(btn);
 
             }
-        }, false);
+        });
         req.send(null); 
         event.preventDefault();
-    }
+   // }
     });
 
 }
