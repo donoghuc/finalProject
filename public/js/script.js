@@ -26,7 +26,9 @@ function work() {
                 var response = JSON.parse(req.responseText); //this parses the returned row 
                 //modify based on boolean value for lbs (true) kg (false)
                 console.log(response);
-                if (response.nameMissing) {console.log("nameMissing")};
+                if (response.nameMissing) {
+                    document.getElementbyId('blankName').innerHTML = "Name Field Is Required";
+                } else {}
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }
@@ -71,7 +73,7 @@ function work() {
         });
         req.send(null); 
         event.preventDefault();
-   // }
+    }
     });
 
 }
