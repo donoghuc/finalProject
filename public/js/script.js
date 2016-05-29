@@ -42,10 +42,11 @@ function work() {
                 //love how easy it is to get through object params in JS (been in c world for Operating systems class...)
                 for (var prop in response) {
                     if (prop == "id") {
+                        console.log("id found");
                         var idCell = newRow.insertCell(-1);
                         var newCellText = document.createTextNode(response[prop]);
                         idCell.appendChild(newCellText);
-                        idCell.style = "display:none"; 
+                        idCell.style = display:none ; 
                     }
                     var newCell = newRow.insertCell(-1);
                     var newText = document.createTextNode(response[prop]);
