@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded',work) //wait for load, then call ge
 //work: just a start point to start llistening for clicks and to keep formattting the DOM alive
 function work() {
     //this will handle submission. Ajax will update database and DOM will show new tables added durring this session
-    var namePresent = document.getElementbyId('name');
-    var error = document.querySelector('.error');
+    //var namePresent = document.getElementbyId('name');
+    //var error = document.querySelector('.error');
     document.getElementById('submit').addEventListener('click', function(event) {
         //
        /* if(namePresent.validity.valueMissing) {
