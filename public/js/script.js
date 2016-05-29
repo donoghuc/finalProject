@@ -69,6 +69,8 @@ function work() {
                 var editCell = newRow.insertCell(-1)
                 editCell.appendChild(btn);
 
+                document.getElementById('blankName').innerHTML = "Row Added";
+
             }
         }
         });
