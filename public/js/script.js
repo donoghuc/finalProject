@@ -43,14 +43,15 @@ function work() {
                 for (var prop in response) {
                     if (prop == "id") {
                         console.log("id found");
-                        var idCell = newRow.insertCell(-1);
+                        /*var idCell = newRow.insertCell(-1);
                         var newCellText = document.createTextNode(response[prop]);
                         idCell.appendChild(newCellText);
-                        idCell.style = display:none ; 
-                    }
+                        idCell.style = "display:none"; */
+                    } else {
                     var newCell = newRow.insertCell(-1);
                     var newText = document.createTextNode(response[prop]);
                     newCell.appendChild(newText);
+                    }
                 }
                 /*I implemented the delete button first. THis one was CAKE compared to Delete (bc i allredy 
                 figure out the attribute assignments. Basically, just take you to /safe-update and assign the 
