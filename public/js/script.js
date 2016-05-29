@@ -25,6 +25,7 @@ function work() {
                 //get response
                 var response = JSON.parse(req.responseText); //this parses the returned row 
                 //modify based on boolean value for lbs (true) kg (false)
+                console.log(response);
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }

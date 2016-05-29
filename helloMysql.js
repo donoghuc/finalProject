@@ -51,7 +51,14 @@ Making it happen asynchonous w/o reloading page was the hard part. */
 
 app.get('/insert',function(req,res,next){
  // var context = {};
- if (req.query.name == "") {console.log("no name")};
+
+ if (req.query.name == "") {
+  var arrayFormat = [];
+  var object = {}
+  object.noName = true;
+  arrayFormat.push(object);
+  res.send(arrayFormat)};
+ else {
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`lbs`,`date`) VALUES (?,?,?,?,?)", [req.query.name,
     req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
     if(err){
@@ -73,7 +80,7 @@ app.get('/insert',function(req,res,next){
     //context.results = "Inserted id " + result.insertId;
     //res.render('home',context);
   });
-
+}
 
 
 

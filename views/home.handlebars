@@ -5,8 +5,8 @@
 	<fieldset>
 		<legend>New Workout Entry</legend>
 		<label for="name">Exercise Name: </label>
-		<input type="text" name="name" id="name" required>
-		<span class="error"></span>
+		<input type="text" name="name" id="name">
+		
 		<br />
 		<label for="reps">Repititions: </label>
 		<input type="text" name="reps" id="reps">
@@ -26,6 +26,8 @@
 		<input type="submit" id="submit" value="Upload Workout">
 	</fieldset>
 </form>
+
+<span id="blankName"></span>
 
 <h2>Workout Data From Database</h2>
 <table class="workoutDB" id="workoutDB">
