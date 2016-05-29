@@ -28,7 +28,7 @@ function work() {
                 console.log(response);
                 if (response.nameMissing) {
                     document.getElementbyId('blankName').innerHTML = "Name Field Is Required";
-                } else {}
+                } else {
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
                 }
