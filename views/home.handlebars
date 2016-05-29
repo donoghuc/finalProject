@@ -1,6 +1,6 @@
 <h1>Workout Information</h1>
 <h2>Enter A New Workout</h2>
-<p>Fill out the form below detailing your exercises. Note the date format and dont forget to select unit of mass</p>
+<p>Fill out the form below detailing your exercises. Note the name field is required and dont forget to select unit of mass</p>
 <form id="addNew" action="/insert">
 	<fieldset>
 		<legend>New Workout Entry</legend>
@@ -20,7 +20,7 @@
 		<input type="radio" name="lbs" value="0" id="lbs">
 
 		<br />
-		<label for="date">Date Performed (format example: 2016-5-25): </label>
+		<label for="date">Date Performed: </label>
 		<input type="date" name="date" id="date">
 		<br />
 		<input type="submit" id="submit" value="Upload Workout">
