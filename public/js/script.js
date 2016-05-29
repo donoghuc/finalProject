@@ -27,7 +27,7 @@ function work() {
                 //modify based on boolean value for lbs (true) kg (false)
                 console.log(response);
                 if (response.nameMissing) {
-                    document.getElementbyId('blankName').innerHTML = "Name Field Is Required";
+                    document.getElementById('blankName').innerHTML = "Name Field Is Required";
                 } 
                 if (response.lbs == "1") {
                     response.lbs = "lbs";
