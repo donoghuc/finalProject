@@ -66,11 +66,11 @@ function work() {
                 editCell.appendChild(btn);
 
             }
-        });
+        }, false);
         req.send(null); 
         event.preventDefault();
     }
-    }, false);
+    });
 
 }
 
